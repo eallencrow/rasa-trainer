@@ -1,0 +1,26 @@
+{
+  "name": "rasa-trainer",
+  "version": "1.0.0",
+  "description": "Rasa Training app",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eallencrow/rasa-trainer.git"
+  },
+  "author": "Edward Crow",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/eallencrow/rasa-trainer/issues"
+  },
+  "homepage": "https://github.com/eallencrow/rasa-trainer#readme",
+  "devDependencies": {
+    "electron": "^4.0.8"
+  },
+  "dependencies": {
+    "jquery": "^3.3.1"
+  }
+}
