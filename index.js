@@ -1,26 +1,12 @@
-const { app, BrowserWindow } = require('electron')
+const { app } = require('electron')
+const config = require('./src/config')
 
-let win;
+const { init, onActivate } = require('./src/windows')(app, config)
 
-function chooseWorkspace() {
-    win = new BrowserWindow({
-        show: false
-    })
-    win.on('ready-to-show', win.show)
-    win.on('closed', () => {
-        win = null;
-    })
-    win.loadFile(__dirname + '/views/choose_workspace.html')
-}
-
-app.on('ready', chooseWorkspace)
+app.on('ready', init)
 app.on('window-all-closed', () => {
     if(process.platform !== 'darwin') {
         app.quit()
     }
 })
-app.on('activate', () => {
-    if(win === null) {
-        chooseWorkspace()
-    }
-})
+app.on('activate', onActivate)

@@ -21,6 +21,7 @@
     "electron": "^4.0.8"
   },
   "dependencies": {
-    "jquery": "^3.3.1"
+    "jquery": "^3.3.1",
+    "js-yaml": "^3.12.2"
   }
 }

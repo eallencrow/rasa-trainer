@@ -8,14 +8,31 @@
 </head>
 <body>
     <div>
-        <form>
+        <form id="workspace_form">
             <div>
                 <label>Choose a Workspace:</label>
-                <input type="text"/>
+                <input id="workspace" type="file" webkitdirectory/>
             </div>
             <button type="submit">OK</button>
-            <button type="button">Cancel</button>
+            <button id="cancel" type="button">Cancel</button>
         </form>
     </div>
+    <script>
+        const $ = require('jquery')
+        const { ipcRenderer } = require('electron')
+
+        const fileInput = $("#workspace")
+        const form = $("#workspace_form")
+        const cancelButton = $("#cancel")
+
+        form.submit(() => {
+            console.log(fileInput)
+        })
+
+        ipcRenderer.on('workspaces', (event, workspaces) => {
+            console.log(workspaces)
+        })
+
+    </script>
 </body>
 </html>
